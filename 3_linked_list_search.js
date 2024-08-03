@@ -6,14 +6,13 @@ class listNode {
 }
 
 function search(head, value) {
-  let current = head
-  while (current !== null) {
-    if (current.value === value) {
-      return true
-    }
-    current = current.next
+  if (head === null) {
+    return false
   }
-  return false
+  if (head.value === value) {
+    return true
+  }
+  return search(head.next, value)
 }
 
 // This function searches a linked list built from the provided listNode class, returning True if an element is found in the linked list. It returns False otherwise.
